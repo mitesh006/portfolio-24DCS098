@@ -1,43 +1,39 @@
 .skills-section {
-  padding: 64px 0;
+  padding: 0 0 48px;
 }
 
 .skills-container {
-  max-width: 960px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 24px;
-  animation: fadeInUp 0.6s ease both;
 }
 
 .skills-subtitle {
-  font-size: 1rem;
+  font-size: 0.85rem;
   color: var(--color-text-muted);
-  margin-bottom: 20px;
+  margin-bottom: 14px;
 }
 
 .skills-grid {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 8px;
 }
 
 .skill-chip {
-  padding: 10px 20px;
+  padding: 6px 14px;
   background: var(--color-surface);
   border: 1px solid var(--color-border);
-  border-radius: 999px;
-  font-size: 0.9rem;
+  border-radius: 6px;
+  font-size: 0.82rem;
   font-weight: 500;
-  color: var(--color-text);
+  color: var(--color-text-muted);
   transition: var(--transition);
   cursor: default;
 }
 
 .skill-chip:hover {
-  border-color: var(--color-accent);
-  background: var(--color-accent-glow);
-  color: var(--color-accent);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 16px var(--color-accent-glow);
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
 }

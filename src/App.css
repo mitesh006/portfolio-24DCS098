@@ -1,22 +1,47 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
 
-/* ── Design Tokens ── */
+/* ── Design Tokens (Dark — default) ── */
 :root {
-  --color-bg: #0f1117;
-  --color-surface: #1a1d27;
-  --color-surface-alt: #232736;
-  --color-border: rgba(255, 255, 255, 0.06);
+  --color-bg: #101014;
+  --color-surface: #18181b;
+  --color-surface-alt: #1f1f23;
+  --color-border: rgba(255, 255, 255, 0.07);
   --color-text: #e4e4e7;
-  --color-text-muted: #9ca3af;
+  --color-text-muted: #71717a;
   --color-accent: #818cf8;
-  --color-accent-glow: rgba(129, 140, 248, 0.25);
+  --color-accent-glow: rgba(129, 140, 248, 0.1);
   --color-accent-secondary: #a78bfa;
   --color-gradient-start: #818cf8;
   --color-gradient-end: #c084fc;
-  --radius: 12px;
-  --radius-lg: 16px;
-  --shadow: 0 4px 24px rgba(0, 0, 0, 0.3);
-  --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --radius: 10px;
+  --radius-lg: 14px;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.25);
+  --transition: 0.2s ease;
+}
+
+/* ── Light Mode Overrides ── */
+.light {
+  --color-bg: #fafafa;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f4f4f5;
+  --color-border: rgba(0, 0, 0, 0.07);
+  --color-text: #18181b;
+  --color-text-muted: #71717a;
+  --color-accent: #6366f1;
+  --color-accent-glow: rgba(99, 102, 241, 0.08);
+  --color-accent-secondary: #7c3aed;
+  --color-gradient-start: #6366f1;
+  --color-gradient-end: #a855f7;
+  --shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+}
+
+.light .navbar {
+  background: rgba(250, 250, 250, 0.85);
+}
+
+.light .header-title {
+  -webkit-text-fill-color: var(--color-text);
+  background: none;
 }
 
 /* ── Reset & Base ── */
@@ -40,47 +65,45 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* ── App wrapper ── */
+.app {
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 /* ── Container ── */
 .container {
   width: 100%;
-  max-width: 960px;
+  max-width: 720px;
   margin: 0 auto;
   padding: 0 24px;
 }
 
 /* ── Section shared ── */
-.section {
-  padding: 64px 0;
-}
-
 .section-title {
-  font-size: 1.75rem;
-  font-weight: 700;
-  margin-bottom: 24px;
-  background: linear-gradient(135deg, var(--color-gradient-start), var(--color-gradient-end));
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  display: inline-block;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: var(--color-text);
+  letter-spacing: -0.01em;
+  display: block;
+  /* Kill the gradient text — solid color looks less template-y */
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
 }
 
 /* ── Animations ── */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(24px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
   }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-.animate-in {
-  animation: fadeInUp 0.6s var(--transition) both;
 }
