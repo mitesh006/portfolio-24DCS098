@@ -1,39 +1,38 @@
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './NavBar.css'
 
 const NavBar = ({ darkMode, toggleDarkMode }) => {
   return (
     <nav className='navbar'>
       <div className='navbar-container'>
-        <NavLink to="/" className='navbar-logo'>
+        <Link to="/" className='navbar-logo'>
           mitesh.
-        </NavLink>
+        </Link>
 
         <ul className='navbar-links'>
           <li>
-            <NavLink
+            <Link
               to="/"
-              end
-              className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}
+              className="nav-link"
             >
               Home
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink
+            <Link
               to="/projects"
-              className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}
+              className="nav-link"
             >
               Projects
-            </NavLink>
+            </Link>
           </li>
           <li>
-            <NavLink
+            <Link
               to="/contact"
-              className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}
+              className="nav-link"
             >
               Contact
-            </NavLink>
+            </Link>
           </li>
         </ul>
 

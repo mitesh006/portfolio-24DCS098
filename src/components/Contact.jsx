@@ -86,19 +86,10 @@ const Contact = () => {
               {message.length} / {maxChars}
             </span>
           </div>
-
           <button className='form-submit' type='submit'>
             Send Message
           </button>
         </form>
-
-        {/* Real-time preview of the message as the user types */}
-        {message.length > 0 && (
-          <div className='message-preview'>
-            <p className='preview-label'>Preview</p>
-            <p className='preview-text'>{message}</p>
-          </div>
-        )}
       </div>
     </section>
   )
